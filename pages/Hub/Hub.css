@@ -1,0 +1,33 @@
+section {
+
+}
+h2 {
+    font-size: 4rem;
+    padding: 2rem;
+    margin-left: 4rem;
+
+}
+.apps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    gap: 1rem;
+
+}
+
+.apps-container > button {
+    background: none;
+    border: none;
+    padding: 2rem;
+}
+
+
+button > img {
+    height: 100px;
+    width: auto;
+}
+
+button > img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}

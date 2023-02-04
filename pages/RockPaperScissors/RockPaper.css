@@ -1,0 +1,25 @@
+#RockPaperScissors {
+
+}
+
+#RockPaperScissors > .challenge-container > ul {
+    list-style-type: none;
+}
+
+#RockPaperScissors > .challenge-container > ul > li > button {
+    background: none;
+    border: none;
+
+}
+
+#RockPaperScissors > .challenge-container > .myimg > img {
+    height: 200px;
+    width: 200px;
+}
+
+#RockPaperScissors > .btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}

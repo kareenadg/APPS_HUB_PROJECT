@@ -1,0 +1,45 @@
+#Login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#Login > div {
+    background-color: #ffedd2;
+    color: #91704b;
+    padding: 2rem;
+    height: 10rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    font-weight: 100;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 10px;
+  }
+
+#Login > h1 {
+    font-size: 4rem;
+    font-style: italic;
+}
+
+
+#Login > div > label {
+    font-size: 2rem;
+    color:sienna;
+}
+
+#Login > div > input {
+    height: 70px;
+    width: 200px;
+}
+
+#Login > div > #loginBtn {
+    height: 50px;
+    width: 70px;
+}

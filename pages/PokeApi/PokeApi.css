@@ -1,0 +1,48 @@
+#PokeApi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 99%;
+}
+
+#PokeApi > h2 {
+    
+}
+
+#PokeApi > .btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+
+}
+
+#PokeApi > .types-btn {
+
+}
+
+#PokeApi > .poke-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 0 3rem;
+
+}
+
+#PokeApi > .poke-container > figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#PokeApi > .poke-container > figure > img {
+    height: 100%;
+    width: 100%;
+}
+
+#PokeApi > .poke-container > figure > h2 {
+    font-size: 2rem;
+}
