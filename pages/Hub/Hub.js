@@ -4,21 +4,20 @@ import { printTemplate as LoginTemplate } from "../Login/Login";
 
 
 const template = () => `
-    <section id="Hub">
-    <h2>Welcome to my hub, ${localStorage.getItem("user")}!</h2>
-    <button id="logoutBtn">Log Out</button>
+    <section class="Hub" id="Hub">
+    <h2>Welcome to my Hub, ${localStorage.getItem("user")}!</h2>
+    <div class="mybtn">
+    <button class="logoutBtn" id="logoutBtn">Log Out</button>
+    </div>
     <div class="apps-container">
     <button id='pokeapi'>
-    <img src="/icons/pokemon.png" alt="Pokemon icon"/>
-    </button>
-    <button id='pokeshop'>
-    <img src="/icons/pokeball.png" alt="Pokeball icon"/>
+    <img src="https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536434/APP_HUB_PROJECT/POKE_API/pokemon_adw4tq.png" alt="Pokemon icon"/>
     </button>
     <button id='rolldice'>
-    <img src="/icons/dice.png" alt="Dice icon"/>
+    <img src="https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536354/APP_HUB_PROJECT/ROLL_THE_DICE/dice_nr6scs.png" alt="Dice icon"/>
     </button>
     <button id='rockpaper'>
-    <img src="/icons/rockpaper.png" alt="Rock Paper Scissors icon"/>
+    <img src="https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536486/APP_HUB_PROJECT/ROCK_PAPER_SCISSORS/rockpaper_exl3ct.png" alt="Rock Paper Scissors icon"/>
     </button>
     </div>
     </section>
@@ -30,7 +29,6 @@ const addListeners = () => {
     LoginTemplate());
     document.querySelector("#pokeapi").addEventListener("click", () =>
     initContent("PokeApi"));
-    document.querySelector("#pokeshop").addEventListener("click", () => initContent("PokeShop"));
     document.querySelector("#rolldice").addEventListener("click", () => initContent("RollDice"));
     document.querySelector("#rockpaper").addEventListener("click", () => initContent("RockPaper"));
 }

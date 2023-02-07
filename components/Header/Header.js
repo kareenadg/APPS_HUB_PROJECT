@@ -2,7 +2,7 @@ import "./Header.css";
 
 const template = () => `
 <div class="header">
-<button type="button" id="themeBtn">🎨</button>
+<button class="themeBtn" type="button" id="themeBtn">🎨</button>
 <div>
 `;
 

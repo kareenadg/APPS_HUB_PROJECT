@@ -1,13 +1,42 @@
-#RollDice {
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Unicase:wght@300;400;500;600&family=Paprika&display=swap');
+
+.RollDice {
+    font-family: "Cormorant Unicase";
+    flex-wrap: wrap;
+}
+
+.RollDice > h2 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 99%;
+    font-size: 5rem;
+    padding: 0;
+    margin: 0;
 }
 
-#RollDice > .dice-container > img {
+.RollDice > .btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    margin-right: 2rem;
+    gap: 3rem;
+}
+
+.RollDice > .btn > button {
+    font-family: "Cormorant Unicase";
+    font-weight: 600;
+    font-size: 22px;
+    background: none;
+    border: none;
+}
+
+.RollDice > .dice-container > img {
     animation: myAnimation 1s;
+    height: 150px;
+    width: 150px;
+    margin-right: 10rem;
 }
 
 @keyframes myAnimation {
@@ -15,20 +44,47 @@
     to {transform: rotate(360deg)};
 }
 
-#RollDice > .btn {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 10px;
-}
-
-#RollDice > .dice-container {
+.RollDice > .dice-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-#RollDice > .dice-container > img {
-    
+.RollDice > .dice-container > button {
+    font-family: "Cormorant Unicase";
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: beige;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+}
+
+@media (max-width: 700px){
+    .RollDice > h2 {
+        font-size: 3rem;
+    }
+    .RollDice > .btn {
+        gap: 1rem;
+        margin: 0;
+    }
+    .RollDice > .btn > button {
+        font-size: 18px;
+    }
+    .RollDice > .dice-container > img {
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem;
+    }
+    .RollDice > .dice-container > button {
+        height: 30px;
+        width: 70px;
+        font-size: 1.2rem;
+    }
 }

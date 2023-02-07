@@ -13,7 +13,7 @@ FooterTemplate();
 export const initContent = (route) => {
     switch (route){
         case undefined:
-            LoginTemplate();
+            localStorage.getItem("user") ? HubTemplate() : LoginTemplate();
             break;
         case "Login":
             LoginTemplate();
@@ -23,9 +23,6 @@ export const initContent = (route) => {
             break;
         case "PokeApi":
             PokeApiTemplate();
-            break;
-        case "PokeShop":
-           /*  ShopTemplate(); */
             break;
         case "RollDice":
             RolldiceTemplate();

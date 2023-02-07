@@ -6,22 +6,22 @@ const template = () => `
 <ul>
   <li>
       <a href="https://www.instagram.com/kareenadg/">
-      <img src="/icons/instagram.png" id="Instagram" alt="Instagram icon"/>
+      <img src="https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675608770/APP_HUB_PROJECT/ICONS/instagram_ahshyk.png" id="Instagram" alt="Instagram icon"/>
       </a>
   </li>
   <li>
     <a href="https://www.linkedin.com/in/kareenadg/">
-    <img src="/icons/linkedin.png" alt="Linkedin icon"/>
+    <img src="https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536255/APP_HUB_PROJECT/ICONS/linkedin_tj2l0l.webp" alt="Linkedin icon"/>
     </a>
   </li>
   <li>
     <a href="https://github.com/kareenadg">
-    <img src="/icons/github.png" alt="Github icon"/>
+    <img src="https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536255/APP_HUB_PROJECT/ICONS/github_p8skdm.png" alt="Github icon"/>
     </a>
   </li>
 </ul>
 </div>
-<section class="creator"><h2>Powered by Kareen A.</h2></section>
+<div class="creator"><h2>Powered by Kareen A.</h2></div>
 `;
 
 export const printTemplate = () => {

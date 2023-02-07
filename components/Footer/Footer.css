@@ -1,25 +1,14 @@
 footer {
-    max-height: 7vh;
-}
-
-@media (max-width: 770px) {
-    footer {
-        padding: 0 2rem;
-        gap: 2rem;
-    }
+    max-height: 10vh;
 }
 
 footer > div > ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 3rem;
+    padding-right: 2rem;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-footer > .creator {
-    height: 1vh;
 }
 
 footer > .creator > h2{
@@ -28,14 +17,24 @@ footer > .creator > h2{
     justify-content: flex-end;
     align-items: flex-end;
     letter-spacing: 2px;
+    padding: 1rem;
 }
 
 footer > div > ul > li {
     list-style-type: none;
 }
 
-
 footer > div > ul > li > a > img {
     height: 2rem;
     width: 2rem;
+}
+
+@media (max-width: 650px) {
+    footer > div > ul > li > a > img {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    footer > .creator > h2{
+        font-size: 15px;
+    }
 } 

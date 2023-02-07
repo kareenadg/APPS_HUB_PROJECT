@@ -2,12 +2,12 @@ import "./Login.css";
 import { printTemplate as HubTemplate } from "../Hub/Hub";
 
  const template = () => `
-    <section id="Login">
+    <section class="Login" id="Login">
     <h1>Neoland Hub-Games</h1>
     <div class="box">
     <label>Please, enter your name:</label>
     <input type='text' id='name' placeholder="Name" />
-    <button id='loginBtn'>Log in</button>
+    <button class="loginBtn" id='loginBtn'>Log in</button>
     </div>
     </section>
     `;
@@ -15,9 +15,10 @@ import { printTemplate as HubTemplate } from "../Hub/Hub";
 
 const addListeners = () => {
     const myInput = document.querySelector("#name");
-    document.querySelector("#loginBtn").addEventListener("click", () => 
+    document.querySelector(".loginBtn").addEventListener("click", () => 
     {localStorage.setItem("user", myInput.value);
-    HubTemplate();
+    if (myInput.value){
+    HubTemplate()};
 })};
 
 

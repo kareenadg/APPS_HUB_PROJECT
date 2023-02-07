@@ -1,25 +1,116 @@
-#RockPaperScissors {
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Unicase:wght@300;400;500;600&family=Paprika&display=swap');
 
+.RockPaperScissors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cormorant Unicase";
 }
 
-#RockPaperScissors > .challenge-container > ul {
-    list-style-type: none;
+.RockPaperScissors > h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10rem;
+    margin: 0;
+    font-size: 5rem;
 }
 
-#RockPaperScissors > .challenge-container > ul > li > button {
-    background: none;
-    border: none;
-
-}
-
-#RockPaperScissors > .challenge-container > .myimg > img {
-    height: 200px;
-    width: 200px;
-}
-
-#RockPaperScissors > .btn {
+.RockPaperScissors > .btn {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 10px;
+    float: right;
+    padding-left: 74rem;
+    gap: 2rem;
+}
+
+.RockPaperScissors > .btn > button {
+    font-family: "Cormorant Unicase";
+    font-size: 22px;
+    font-weight: 600;
+    background: none;
+    border: none;
+}
+
+.RockPaperScissors > h3 {
+    font-size: 3rem;
+    padding: 0 3rem;
+}
+
+.RockPaperScissors > .challenge-container > ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 20rem;
+    gap: 3rem;
+    border-bottom: 5px solid black;
+}
+
+.RockPaperScissors > .challenge-container > ul > li {
+    gap: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.RockPaperScissors > .challenge-container > ul > li > button {
+    background: none;
+    border: none;
+}
+
+.RockPaperScissors > .challenge-container > ul > li > button:hover {
+    transform: scale(1.2);
+    transition: all 0.4s ease-in-out;
+}
+
+.RockPaperScissors > .challenge-container > ul > li > button > img {
+    gap: 3rem;
+}
+
+.RockPaperScissors > .challenge-container > .myimg > img {
+    height: 210px;
+    width: auto;
+    padding: 0 27rem;
+    margin: 2rem 12rem;
+}
+
+.RockPaperScissors > .challenge-container > .myimg > p {
+    font-size: 3.5rem;
+    text-shadow: #FC0 1px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.RockPaperScissors > .repeat > .playbtn {
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    background-color: navajowhite;
+    color: black;
+    font-family: "Cormorant Unicase";
+    font-weight: 600;
+    font-size: 24px;
+    margin: 2rem 19rem;
+}
+
+@media (max-width:) {
+    .RockPaperScissors > h2 {
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }

@@ -1,45 +1,82 @@
-#Login {
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap');
+
+.Login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
+  font-family:  "Cinzel";
 }
 
-#Login > div {
-    background-color: #ffedd2;
-    color: #91704b;
-    padding: 2rem;
-    height: 10rem;
-    width: 40%;
+ .box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-color: #ffedd2;
+    color: #91704b;
+    margin: 1rem;
+    padding: 2rem;
+    height: 15rem;
+    width: 40%;
     gap: 1rem;
-    font-weight: 100;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 10px;
   }
 
-#Login > h1 {
+
+.Login > h1 {
     font-size: 4rem;
-    font-style: italic;
 }
 
-
-#Login > div > label {
-    font-size: 2rem;
+.Login > .box > label {
+    font-size: 35px;
     color:sienna;
 }
 
-#Login > div > input {
-    height: 70px;
+.Login > .box > input {
+    height: 38px;
     width: 200px;
+    font-family:  "Cinzel";
+    font-size: 1.5rem;
+    padding-left: 1rem;
 }
 
-#Login > div > #loginBtn {
-    height: 50px;
-    width: 70px;
+.Login > .box > #loginBtn {
+    font-family:  "Cinzel";
+    font-size: 1.3rem;
+    font-weight: 600;
+    height: 38px;
+    width: 90px;
 }
+
+
+@media (max-width: 770px){
+    .Login > h1 {
+        font-size: 2rem;
+    }
+    .Login > .box {
+        height: 10rem;
+        width: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Login > .box > label {
+        font-size: 20px;
+    }
+    .Login > .box > input {
+        height: 30px;
+        width: 140px;
+        font-size: 0.9rem;
+    }
+    .Login > .box > #loginBtn {
+        height: 25px;
+        width: 60px;
+        font-size: 10px;
+    }
+    };
+

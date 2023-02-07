@@ -1,33 +1,70 @@
-section {
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Unicase:wght@300;400;500;600&family=Paprika&display=swap');
 
+.Hub {
+    font-family: "Cormorant Unicase";
+    font-weight: 300;
+    text-shadow: rgb(141, 84, 32) 1px 0 10px;
 }
-h2 {
-    font-size: 4rem;
+
+.Hub > h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
     padding: 2rem;
-    margin-left: 4rem;
-
-}
-.apps-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: auto;
-    gap: 1rem;
-
 }
 
-.apps-container > button {
+.Hub > .mybtn > .logoutBtn {
+    font-family: "Cormorant Unicase";
+    font-weight: 600;
+    float: right;
+    padding-right: 2rem;
+    margin: 1rem;
+    font-size: 22px;
     background: none;
     border: none;
-    padding: 2rem;
+}
+
+.Hub > .mybtn > .logoutBtn:hover {
+transition: all 0.2s ease-in-out;
+color: blanchedalmond;
+}
+
+.Hub > .apps-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+    margin-top: 4rem;
+}
+
+.Hub > .apps-container > button {
+    background: none;
+    border: none;
 }
 
 
-button > img {
-    height: 100px;
+.Hub > .apps-container > button > img {
+    height: 180px;
     width: auto;
 }
 
-button > img:hover {
+.Hub > .apps-container > button > img:hover {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 870px) {
+    .Hub > h2 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    .Hub > .apps-container > button > img {
+        height: 120px;
+        width: auto;
+    }
+    .Hub > .mybtn > .logoutBtn {
+        text-align: center;
+    }
 }

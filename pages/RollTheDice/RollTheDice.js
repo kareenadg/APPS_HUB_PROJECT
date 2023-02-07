@@ -2,8 +2,7 @@ import "./RollTheDice.css";
 import { printTemplate as HubTemplate } from "../Hub/Hub";
 import { printTemplate as LoginTemplate } from "../Login/Login";
 
-const diceSides = ["../../public/dicesides/side1.png", "../../public/dicesides/side2.png", "../../public/dicesides/side3.png", "../../public/dicesides/side4.png", "../../public/dicesides/side5.png", "../../public/dicesides/side6.png"]
-
+const diceSides = ["https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536370/APP_HUB_PROJECT/ROLL_THE_DICE/side1_hpdplb.png", "https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536370/APP_HUB_PROJECT/ROLL_THE_DICE/side2_voqve4.png", "https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536370/APP_HUB_PROJECT/ROLL_THE_DICE/side3_yivtd0.png", "https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536370/APP_HUB_PROJECT/ROLL_THE_DICE/side4_zqgg7f.png", "https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536370/APP_HUB_PROJECT/ROLL_THE_DICE/side5_bfrk1b.png", "https://res.cloudinary.com/dlvbfzkt9/image/upload/v1675536370/APP_HUB_PROJECT/ROLL_THE_DICE/side6_gnfakp.png"];
 
 const rollDice = (min = 0, max = 5) => {
     min = Math.ceil(min);
@@ -12,11 +11,11 @@ const rollDice = (min = 0, max = 5) => {
 };
 
 const template = () => `
-<section id="RollDice">
+<section class="RollDice" id="RollDice">
 <h2>ROLL THE DICE</h2>
 <div class="btn">
-<button id="backBtn">Back</button>
-<button id="logoutBtn">Log Out</button>
+<button class="backBtn" id="backBtn">←BACK</button>
+<button class="logoutBtn" id="logoutBtn">Log Out</button>
 </div>
 <div class="dice-container">
 <img src="${diceSides[rollDice()]}" alt="Dice picture" />

@@ -3,13 +3,16 @@ import { printTemplate as HubTemplate } from "../Hub/Hub";
 import { printTemplate as LoginTemplate } from "../Login/Login";
 
 const template = () => `
-<section id="PokeApi">
+<section class="PokeApi" id="PokeApi">
 <h2>POKÉDEX</h2>
 <div class="btn">
-<button id="backBtn">Back</button>
-<button id="logoutBtn">Log Out</button>
+<button class="backBtn" id="backBtn">←BACK</button>
+<button class="logoutBtn" id="logoutBtn">Log Out</button>
 </div>
 <nav class="types-btn">
+<div class="input">
+<input type='text' id='search' placeholder="🔍 Search" />
+</div>
 <button class="all">All</button>
 </nav>
 <div class="poke-container">
@@ -21,9 +24,11 @@ const types = ["grass", "poison", "fire", "water", "bug", "normal", "electric", 
 
 const BASEURL = "https://pokeapi.co/api/v2/pokemon/";
 
-let mapPokemons = [];
 let pokemons = [];
+let mapPokemons = [];
+
 const getPokemons = async () => {
+    pokemons = [];
     for (let i = 1; i <= 150; i++) {
         const data = await fetch(`${BASEURL}${i}`);
         const info = await data.json();
@@ -49,12 +54,14 @@ const printPokes = (pokemons) => {
     pokeContainer.innerHTML = "";
     for (const pokemon of pokemons) {
         const myFigure = document.createElement("figure");
+        myFigure.classList.add(`${pokemon.type}`);
         myFigure.innerHTML = `
-        <img src=${pokemon.image} alt='${pokemon.name}'/>
         <h2>${pokemon.name.toUpperCase()}</h2>
+        <img src=${pokemon.image} alt='${pokemon.name}'/>
         <h3>${pokemon.id}</h3>
-        <p>WEIGHT: ${pokemon.weight}KG | HEIGHT: ${pokemon.height}M</p>
-        <p>TYPE: ${pokemon.type}</p>`;
+        <p>WEIGHT: ${pokemon.weight}KG</p>
+        <p>HEIGHT: ${pokemon.height}M</p>
+        <p>TYPE: ${pokemon.type.toUpperCase()}</p>`;
         pokeContainer.appendChild(myFigure);
         }
 }
@@ -64,11 +71,11 @@ const myTypes = () => {
     const myNav = document.querySelector(".types-btn");
     for (const type of types) {
         const myBtn = document.createElement("button");
-        myBtn.innerHTML = `${type}`;
-        myBtn.classList.add(`${type}`);
+        myBtn.innerHTML = `${type.toUpperCase()}`;
+        /* myBtn.classList.add(`${type}`); */
         myNav.appendChild(myBtn);
         myBtn.addEventListener("click", () => 
-        printTypes(mapPokemons, `${type}`))
+    printTypes(mapPokemons, `${type}`))
     }
 }
 
@@ -77,6 +84,11 @@ const printTypes = (array, type) => {
     printPokes(myFilter);
 }
 
+const mySearch = (mapPokemons) => {
+    const myInput = document.querySelector("#search");
+    const search = mapPokemons.filter((pokemon) => pokemon.name.toLowerCase().includes(myInput.value.toLowerCase()))
+    printPokes(search);
+}
 
 const addListeners = () => {
     document.querySelector("#backBtn").addEventListener("click", () =>
@@ -85,8 +97,10 @@ const addListeners = () => {
     LoginTemplate());
     document.querySelector(".all").addEventListener("click", () => 
     {document.querySelector(".poke-container").innerHTML = "";
-     printPokes(mapPokemons);
-    })
+    printPokes(mapPokemons)});
+    document.querySelector("#search").addEventListener("input", () =>
+    {document.querySelector(".poke-container").innerHTML = "";
+    mySearch(mapPokemons)});
 }
 
 export const printTemplate = (mapPokemons) => {
@@ -95,7 +109,3 @@ export const printTemplate = (mapPokemons) => {
     getPokemons();
     myTypes();
 }
-
-
-/* const typesBtn = document.querySelector(".types-btn");
- */

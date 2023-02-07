@@ -2,9 +2,9 @@ import "./RockPaper.css";
 import { printTemplate as HubTemplate } from "../Hub/Hub";
 import { printTemplate as LoginTemplate } from "../Login/Login";
 
-const Rock = "../../public/rockpaper/rock.png";
-const Paper = "../../public/rockpaper/paper.png";
-const Scissors = "../../public/rockpaper/scissors.png";
+const Rock = "https://res.cloudinary.com/dlvbfzkt9/image/upload/c_scale,w_210/v1675536522/APP_HUB_PROJECT/ROCK_PAPER_SCISSORS/rock_jeyjxt.png";
+const Paper = "https://res.cloudinary.com/dlvbfzkt9/image/upload/c_scale,w_210/v1675536522/APP_HUB_PROJECT/ROCK_PAPER_SCISSORS/paper_rbtii8.png";
+const Scissors = "https://res.cloudinary.com/dlvbfzkt9/image/upload/c_scale,w_210/v1675536522/APP_HUB_PROJECT/ROCK_PAPER_SCISSORS/scissors_ja4yja.png";
 
 const Rockbtn = document.querySelector("#rock");
 const Paperbtn = document.querySelector("#paper");
@@ -17,15 +17,14 @@ const getRandom = (min = 0, max = 2) => {
 };
 
 const template = () => `
-<section id="RockPaperScissors">
+<section class="RockPaperScissors" id="RockPaperScissors">
 <h2>ROCK PAPER SCISSORS</h2>
 <div class="btn">
-<button id="backBtn">Back</button>
-<button id="logoutBtn">Log Out</button>
+<button class="backBtn" id="backBtn">←BACK</button>
+<button class="logoutBtn" id="logoutBtn">Log Out</button>
 </div>
 <h3>Player: ${localStorage.getItem("user").toUpperCase()} VS. Computer</h3>
 <div class="challenge-container">
-
 <ul>
   <li>
   <button id="rock">
@@ -43,6 +42,8 @@ const template = () => `
   </button>
   </li>
 </ul>
+<div class="myimg">
+</div>
 </div>
 <div class="repeat">
 <button class="playbtn">Play Again</button>
@@ -52,15 +53,13 @@ const template = () => `
 
 const P1 = [Rockbtn, Paperbtn, Scissorsbtn];
 const myImgs = [Rock, Paper, Scissors];
-let P2 = myImgs[getRandom()];
 
 
 const Img = () => {
-const myDiv = document.querySelector(".challenge-container");
-const myImg = document.createElement("div");
-myImg.classList.add("myimg");
+let P2 = myImgs[getRandom()];
+const myImg = document.querySelector(".myimg");
 myImg.innerHTML = `<img src="${P2}" alt="Rock Paper Scissors icon"/>`;
-myDiv.appendChild(myImg)};
+return P2};
 
 
 const getPose = () => {
@@ -68,32 +67,32 @@ const getPose = () => {
     const Paperbtn = document.querySelector("#paper");
     const Scissorsbtn = document.querySelector("#scissors");
     Rockbtn.addEventListener("click", () =>
-    {Img();
-    winner()});
+    {winner(Img(), "Rock")});
     Paperbtn.addEventListener("click", () => 
-    {Img();
-    winner()});
+    {winner(Img(), "Paper")});
     Scissorsbtn.addEventListener("click", () => 
-    {Img();
-    winner()});
+    {winner(Img(), "Scissors")});
 };
 
 
-const winner = () => {
+const winner = (P2, P1) => {
     const choice = document.createElement("p");
-    const alert = choice.innerText;
-    if((P1 == Paperbtn && P2 == myImgs[0])||
-    (P1 == Rockbtn && P2 == myImgs[2])||
-    (P1 == Scissorsbtn && P2 == myImgs[1])){
-        console.log(alert = `${localStorage.getItem("user").toUpperCase()} WINS`);
-    } else if((P2 == myImgs[1] && P1 == Rockbtn)||
-    (P2 == myImgs[0] && P1 == Scissorsbtn)||
-    (P2 == myImgs[2] && P1 == Paperbtn)){
-        console.log(alert = `Computer WINS`);
-    } else if(P1 == P2){
-        console.log(alert = `IT'S A DRAW!`);
+    if((P1 == "Paper" && P2 == myImgs[0])||
+    (P1 == "Rock" && P2 == myImgs[2])||
+    (P1 == "Scissors" && P2 == myImgs[1])){
+        choice.innerText = `${localStorage.getItem("user").toUpperCase()} WINS`;
+        document.querySelector(".myimg").appendChild(choice);
+    } else if((P2 == myImgs[1] && P1 == "Rock")||
+    (P2 == myImgs[0] && P1 == "Scissors")||
+    (P2 == myImgs[2] && P1 == "Paper")){
+        choice.innerText = `Computer WINS`;
+        document.querySelector(".myimg").appendChild(choice);
+    } else if((P1 == "Paper" && P2 == myImgs[1])||
+    (P1 == "Rock" && P2 == myImgs[0])||
+    (P1 == "Scissors" && P2 == myImgs[2])){
+        choice.innerText = `IT'S A DRAW!`;
+        document.querySelector(".myimg").appendChild(choice);
     }
-    document.querySelector(".myimg").appendChild(choice);
 };
 
 
